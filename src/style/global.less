@@ -1,0 +1,66 @@
+@import "./mixin.less";
+
+html {
+  font-size: @28;
+  color: @black;
+  background-color: @bg;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+html, body {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+  color: @black;
+}
+ul {
+  list-style: none;
+}
+img {
+  display: block;
+}
+
+// vux样式覆盖
+.vux-1px, .vux-1px-t, .vux-1px-r, .vux-1px-b, .vux-1px-l {
+  box-sizing: border-box;
+}
+.vux-1px-b:after, .vux-1px-b:before, .vux-1px-t:after, .vux-1px-t:before, .vux-1px-l:after, .vux-1px-l:before, .vux-1px-r:after, .vux-1px-r:before, .vux-1px:before {
+  box-sizing: border-box;
+  border-color: @lightGray;
+}
+
+/* 文字溢出省略号 */
+.overflow-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* lazy */
+img.lazyload {
+  transition: opacity .2s linear;
+}
+
+img[lazy="loading"] {
+  opacity: 0;
+}
+// 图片整合
+[class^="icon-"]{
+  background: url("../assets/sprites.png") no-repeat;
+  background-size: 200px 200px;
+}
+
+input, textarea {
+  border: none;
+  resize: none;
+  outline: none;
+  -webkit-appearance: none;
+}
